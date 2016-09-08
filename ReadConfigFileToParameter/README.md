@@ -47,7 +47,6 @@ You'll want to specify the base url in a config file and read the file from your
   /**
    * Trim leading and trailing whitespace form a null terminated string.
    *
-   * @author kulikala
    * @param  s     The null terminated string.
    * @return       LR_PASS or LR_FAIL.
   /*/

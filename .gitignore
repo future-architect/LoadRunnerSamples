@@ -34,7 +34,7 @@ Watches.xml
 # Files created during script replay (definitely don't need these)
 *.idx
 result[1234567890]*/
-mdrv.log
+mdrv*.log
 TransactionsData.db
 output.txt
 

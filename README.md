@@ -17,6 +17,10 @@ Feel free to take advantage of them and write your own scripts.
   This is helpful when you change the base url of the target application; such as staging.app.sample.com or development.app.sample.com .
   You'll want to specify the base url in a config file and read the file from your script.
 
+* **HandlingJSONWithParson**  
+  This sample uses [future-architect/parson](https://github.com/future-architect/parson) a lightweight [JSON](http://json.org) library written in C.  
+  parson is forked from [kgabis/parson](https://github.com/kgabis/parson).
+
 
 ## License
 

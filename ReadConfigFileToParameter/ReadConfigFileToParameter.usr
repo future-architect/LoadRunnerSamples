@@ -42,9 +42,9 @@ vuser_init=0
 Action=0
 vuser_end=0
 [Replayed Actions]
-vuser_init=1
-Action=1
-vuser_end=1
+vuser_init=0
+Action=0
+vuser_end=0
 [Interpreters]
 vuser_init=cci
 Action=cci
@@ -52,10 +52,10 @@ vuser_end=cci
 [TransactionsOrder]
 Order="Login"
 [StateManagement]
-LastReplayStatus=1
+LastReplayStatus=0
 [ActiveReplay]
-LastReplayedRunName=result4
-ActiveRunName=result4
+LastReplayedRunName=
+ActiveRunName=
 [ExtraFilesToParse]
 fa_read_config.c=
 fa_trim.c=

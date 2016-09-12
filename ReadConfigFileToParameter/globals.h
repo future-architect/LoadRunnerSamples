@@ -3,7 +3,7 @@
 /**
  * Header file for all.
  *
- * @author namba
+ * @author kulikala
 /*/
 
 //--------------------------------------------------------------------
@@ -24,14 +24,14 @@ double g_dThinkTime;
 #define false  0
 
 //--------------------------------------------------------------------
-// Function definitions
-
-//--------------------------------------------------------------------
 // Include Files
 #include "lrun.h"
 #include "web_api.h"
 
 #include "fa_read_config.c"
 #include "fa_trim.c"
+
+//--------------------------------------------------------------------
+// Function definitions
 
 #endif // _GLOBALS_H

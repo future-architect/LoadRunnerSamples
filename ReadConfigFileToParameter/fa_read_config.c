@@ -1,3 +1,7 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
 #define COMMENT_LINE          "#"
 #define MAXBUF                1024
 #define PARAM_DELIM           "="
@@ -27,18 +31,18 @@
 int fa_read_config(const char *szFileName)
 {
 	int rc;
-	int hFile;
+	FILE *hFile;
 	char sLine[MAXBUF];
 	char sParam[MAXBUF];
 	char sVal[MAXBUF];
-	int szDlm;
-	int szShouldBe;
-	int szFound;
+	char *szDlm;
+	char *szShouldBe;
+	char *szFound;
 	int iLen;
 	int iValLen;
 	int i;
 	int isSection;
-	int szPtr;
+	void *szPtr;
 	char *szSection;
 	int iSectionLen;
 	char *szDecryptedVal;
@@ -80,11 +84,11 @@ int fa_read_config(const char *szFileName)
 		szDlm = strstr(sLine, PARAM_LB);
 
 		// If found,
-		if (szDlm == (int)sLine) {
+		if (szDlm == sLine) {
 			// Suppose parameter section
 			// Find right delimiter
-			szShouldBe = (int)sLine + iLen - strlen(PARAM_RB);
-			szFound = strstr((char *)((int)sLine + strlen(PARAM_LB)), PARAM_RB);
+			szShouldBe = sLine + iLen - strlen(PARAM_RB);
+			szFound = strstr(sLine + strlen(PARAM_LB), PARAM_RB);
 
 			// If found,
 			if (szShouldBe == szFound) {
@@ -174,7 +178,7 @@ int fa_read_config(const char *szFileName)
 		szDlm = strstr(sLine, COMMENT_LINE);
 
 		// If found,
-		if (szDlm == (int)sLine) {
+		if (szDlm == sLine) {
 			// Suppose comment line
 			// Skip this line
 			continue;
@@ -201,7 +205,7 @@ int fa_read_config(const char *szFileName)
 		}
 
 		// Calc length
-		iLen = szDlm - (int)sLine;
+		iLen = szDlm - sLine;
 
 		// Copy parameter
 		strncpy(sParam, sLine, iLen);

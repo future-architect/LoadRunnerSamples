@@ -57,6 +57,12 @@ int fa_trim(char *s)
 	// Allocate memory
 	szTmp = (char *)malloc(iLen + 1);
 
+	// If failed to allocate memory
+	if (NULL == szTmp) {
+		lr_output_message("Failed to allocate memory");
+		return LR_FAIL;
+	}
+
 	// Copy string to szTmp
 	strncpy(szTmp, s + i, iLen);
 	szTmp[iLen] = '\0';
